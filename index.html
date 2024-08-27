@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMAN 61 Jakarta Timur</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Gaya Umum */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            transition: background-color 0.5s, color 0.5s;
+        }
+        header {
+            background-color: #0073e6;
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .logo-title {
+            display: flex;
+            align-items: center;
+        }
+        .logo-title img {
+            width: 50px;
+            margin-right: 15px;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #005bb5;
+            padding: 10px 0;
+            position: sticky;
+            top: 60px;
+            z-index: 999;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        nav a {
+            margin: 0 20px;
+            text-decoration: none;
+            color: white;
+            font-weight: 600;
+            padding: 10px;
+            transition: background-color 0.3s;
+        }
+        nav a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+        }
+        .content {
+            padding: 50px 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: sticky;
+            bottom: 0;
+            width: 100%;
+        }
+        /* Gaya Mode */
+        .night-mode {
+            background-color: #2970b7;
+            color: white;
+        }
+        .search-bar {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .search-bar input[type="text"] {
+            padding: 10px;
+            width: 200px;
+            border: 1px solid #0073e6;
+            border-radius: 5px;
+        }
+        .search-bar button {
+            padding: 10px;
+            background-color: #0073e6;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-left: 10px;
+        }
+        .mode-toggle {
+            background-color: #ffcc00;
+            color: black;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        /* Animasi */
+        h2 {
+            text-align: center;
+            animation: fadeIn 1s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        /* About Section */
+        .about-section {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        .about-section img {
+            width: 300px;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+        .about-section img:hover {
+            transform: scale(1.05);
+        }
+        .about-text {
+            max-width: 600px;
+            text-align: justify;
+        }
+        /* Responsif */
+        @media (max-width: 768px) {
+            .about-section {
+                flex-direction: column;
+                text-align: center;
+            }
+            .about-section img {
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-title">
+            <img src="logo_sman61.png" alt="Logo SMAN 61">
+            <h1>SMAN 61 Jakarta Timur</h1>
+        </div>
+        <button class="mode-toggle" onclick="toggleNightMode()">Mode Gelap</button>
+    </header>
+
+    <nav>
+        <a href="#home">Beranda</a>
+        <a href="#about">Tentang</a>
+        <a href="#extracurricular">Ekstrakurikuler</a>
+        <a href="#team">Anggota Kelompok</a>
+        <a href="#alumni">Alumni</a>
+        <a href="#footer">Hak Cipta</a>
+    </nav>
+
+    <div class="search-bar">
+        <input type="text" id="search" placeholder="Cari...">
+        <button onclick="search()">Cari</button>
+    </div>
+
+    <div class="content" id="home">
+        <h2>Selamat Datang di SMAN 61 Jakarta Timur</h2>
+        <img src="sman61_jakarta.jpg" alt="Foto SMAN 61" width="100%">
+        <p>SMAN 61 Jakarta Timur adalah sekolah menengah atas yang memiliki komitmen tinggi dalam mencetak generasi unggul.</p>
+    </div>
+
+    <div class="content" id="about">
+        <h2>Tentang SMAN 61 Jakarta Timur</h2>
+        <div class="about-section">
+            <img src="about_sman61.jpg" alt="Tentang SMAN 61">
+            <div class="about-text">
+                <p>SMAN 61 Jakarta Timur telah berdiri sejak tahun 1980 dan memiliki sejarah panjang dalam memberikan pendidikan berkualitas tinggi kepada siswa-siswinya. Terletak di Jakarta Timur, sekolah ini dikenal dengan berbagai prestasi akademik dan non-akademik yang membanggakan. SMAN 61 memiliki fasilitas lengkap seperti laboratorium, perpustakaan modern, dan ruang kelas yang nyaman untuk mendukung proses pembelajaran.</p>
+                <p>Selain prestasi akademik, SMAN 61 juga aktif dalam berbagai kegiatan ekstrakurikuler yang melibatkan siswa dalam berbagai bidang seperti olahraga, seni, dan sains. Sekolah ini selalu berusaha untuk memberikan yang terbaik bagi seluruh komunitas sekolah, termasuk siswa, guru, dan orang tua.</p>
+                <p>Visi dan misi sekolah adalah menciptakan generasi yang tidak hanya unggul secara akademik, tetapi juga memiliki karakter yang kuat dan siap bersaing di tingkat nasional maupun internasional.</p>
+            </div>
+        </div>
+        </nav>
+        <main>
+            <section>
+                <h2>Visi Sekolah</h2>
+                <p><strong>"Menjadi sekolah unggul yang menghasilkan siswa berkarakter, berprestasi, dan siap menghadapi tantangan global dengan semangat kebangsaan dan keunggulan akademik."</strong></p>
+            </section>
+            <section>
+                <h2>Misi Sekolah</h2>
+                <ul>
+                    <li>Menyediakan pendidikan berkualitas tinggi yang mengintegrasikan kurikulum yang relevan dengan kebutuhan abad 21, serta menerapkan metode pembelajaran yang inovatif.</li>
+                    <li>Membangun karakter siswa melalui pendidikan yang menekankan pada nilai-nilai moral, etika, dan tanggung jawab sosial, serta mengembangkan kepemimpinan dan keterampilan interpersonal.</li>
+                    <li>Mendorong prestasi akademik dan non-akademik dengan memberikan fasilitas dan dukungan yang memadai untuk pengembangan potensi siswa di berbagai bidang.</li>
+                    <li>Menjalin kerjasama yang erat dengan orang tua, masyarakat, dan berbagai pihak terkait untuk menciptakan lingkungan belajar yang kondusif dan mendukung perkembangan siswa secara holistik.</li>
+                    <li>Mengembangkan budaya sekolah yang inklusif dan berorientasi pada prestasi, dengan menciptakan suasana belajar yang menyenangkan dan memotivasi siswa untuk mencapai potensi terbaik mereka.</li>
+                </ul>
+            </section>
+        </main>
+        <script src="scripts.js"></script>
+    </body>
+    </html>
+    </div>
+
+    <div class="content" id="extracurricular">
+        <h2>Ekstrakurikuler SMAN 61 Jakarta Timur</h2>
+        <ul>
+            <li>Pramuka</li>
+            <li>Paskibra</li>
+            <li>Basket</li>
+            <li>Pecinta alam</li>
+            <li>Tari Tradisional</li>
+        </ul>
+    </div>
+        <h2>Hak Cipta</h2>
+        <p>© 2024 SMAN 61 Jakarta Timur. kelompok 6</p>
+    </div>
+
+    <script>
+        function search() {
+            let query = document.getElementById('search').value;
+            alert('Pencarian untuk: ' + query);
+        }
+
+        function toggleNightMode() {
+            document.body.classList.toggle('night-mode');
+        }
+    </script>
+</body>
+</html>
